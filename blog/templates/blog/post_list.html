@@ -6,17 +6,12 @@
         <div>
             <h1><a href="/">Rubberhubiez Blog</a></h1>
         </div>
-
-        <div>
-            <p>published: 5.04.2020, 12:14</p>
-            <h2><a href="">My first post</a></h2>
-            <p>Natural rubber, also called by other names of India rubber, latex, Amazonian rubber, caucho or caoutchouc, as initially produced, consists of polymers of the organic compound isoprene, with minor impurities of other organic compounds, plus water.</p>
-        </div>
-
-        <div>
-            <p>published: 6.04.2020, 12:14</p>
-            <h2><a href="">My second post</a></h2>
-            <p>rubber an ideal polymer for dynamic or static engineering applications such as tires, printer rollers, agitators.</p>
-        </div>
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
     </body>
 </html>
